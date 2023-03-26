@@ -1,0 +1,234 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    background-color: #222222;
+    color: white;
+}
+
+.main{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 50px;
+}
+
+.box{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.main input{
+    color: white;
+    background-color: #222222;
+    border: none;
+    text-align: center;
+    font-size: 40px;
+    width: min-content;
+}
+
+.main input:focus-visible{
+    outline: none;
+}
+
+.input{
+    width: 100px;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    border: solid #3f3f3f 2px;
+    border-radius: 0.5rem;
+    padding: 10px;
+    background-color: #222222;
+    color: white;
+}
+
+#PercentageValue{
+    width: 100px;
+    border: solid #3f3f3f 2px;
+    border-radius: 0.5rem;
+    padding: 10px;
+    background-color: #222222;
+    color: white;
+    margin: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.mid{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.mid button{
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    background-color: #3f3f3f;
+    color: white;
+    font-weight: bold;
+    border: solid #3f3f3f 2px;
+    letter-spacing: 1px;
+    transition-duration: 200ms;
+}
+
+.mid button:hover{
+    background-color: #2c2c2c;
+    border: solid white 2px;
+    transition-duration: 200ms;
+}
+
+
+.perbuttons button{
+    border: solid #3f3f3f 2px;
+    border-radius: 0.5rem;
+    background-color: #222222;
+    color: white;
+}
+
+.perbuttons{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.perbuttons p {
+    margin-top: 22px;
+    font-weight: lighter;
+   letter-spacing: 1px;
+}
+
+input::placeholder{
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.saveDiv{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: solid #2c2c2c 3px;
+}
+
+.saveDiv input{
+    width: 220px;
+    height: fit-content;
+    padding: 9.7px;
+    border-bottom: solid #3f3f3f 2px;
+    border-top: solid #3f3f3f 2px;
+    border-left: solid #3f3f3f 2px;
+    border-right: none;
+    background-color: #222222;
+    color: white;
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+
+.saveDiv input:focus-visible{
+    outline: none;
+}
+
+.saveDiv button {
+    border-bottom: solid #3f3f3f 2px;
+    border-top: solid #3f3f3f 2px;
+    border-right: solid #3f3f3f 2px;
+    border-left: none;
+    font-size: 28px;
+    background-color: #5b5b5b;
+    color: white;
+    margin-bottom: 50px;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.saveDiv button:hover{
+    background-color: #838383;
+}
+
+.title{
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 50px;
+    margin: 0;
+    color: #858585;
+}
+
+.saveStorage{
+    margin: auto;
+    padding: 10px;
+}
+
+.saveModule{
+    display: flex;
+    flex-direction: row;
+    border: solid grey 2px;
+    width: fit-content;
+    border-radius: 0.3rem;
+    align-items: center;
+}
+
+.bi-trash3-fill{
+    margin-left: 40px;
+    color: white;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.listNum{
+    margin: 5px 10px;
+}
+
+.skinName{
+    margin-left: 40px;
+    width: 125px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.priceBefore{
+    width: 110px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.priceAfter{
+    width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.saveModule button:hover{
+    color: #a4a4a4;
+}
+
+.captions{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    border-radius: 0.3rem;
+}
+
+.captions p {
+    margin: 5px 45px;
+    color: lightgray;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+.saveItemDiv{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}

@@ -8,6 +8,10 @@
 body{
     background-color: #222222;
     font-family: 'B612 Mono', monospace;
+    background-image: radial-gradient(#111111 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: 100vh 100vw;
+    overflow-x: hidden;
 }
 
 .text-toxicpurple{

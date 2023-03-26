@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BUFF - Calculator</title>
+    <link rel="stylesheet" href="buffcal.css">
+    <script src="buffcal.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/UECB5mJ.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+<h1 class="title">CURRENCY CONVERTOR FOR BUFF PRICES</h1>
+<div class="main">
+<div class="box">
+    <select id="primary" onchange="changeCurrency(); setRate();" class="input">
+        <option value="CNY">RMB</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EURO</option>
+    </select>
+
+    <input id="amount" onkeyup="setRate()" type="number" placeholder="Amount you want to convert">
+</div>
+    <div class="mid">
+    <h1>=</h1>
+        <button onclick="setRate();">Convert</button>
+    </div>
+    <div class="box">
+    <select id="secondary" onchange="changeCurrency(); setRate();" class="input">
+        <option value="EUR">EURO</option>
+        <option value="USD">USD</option>
+        <option value="CNY">RMB</option>
+    </select>
+    <input id="result" type="number" placeholder="Converted amount">
+        <div class="perbuttons">
+            <p>Percentage of converted amount :</p>
+            <select onchange="changePercentage(); setRate()" id="PercentageValue">
+                <option value="1">100%</option>
+                <option value="0.99">99%</option>
+                <option value="0.98">98%</option>
+                <option value="0.97">97%</option>
+                <option value="0.96">96%</option>
+                <option value="0.95">95%</option>
+                <option value="0.94">94%</option>
+                <option value="0.93">93%</option>
+                <option value="0.92">92%</option>
+                <option value="0.91">91%</option>
+                <option value="0.90">90%</option>
+            </select>
+        </div>
+</div>
+</div>
+
+<div class="saveDiv">
+    <input id="inputSkinName" type="text" placeholder="Name item for saveing it">
+    <button onclick="addItem()" class="bi bi-upload"></button>
+</div>
+
+<div id="saveItemDiv" class="saveItemDiv">
+
+</div>
+
+</body>
+</html>

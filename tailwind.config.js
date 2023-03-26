@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'toxicpurple' :  "rgb(147 51 234)",
+        'toxicpurple' :  "#69369E",
+        'navbar' : '#111111',
       }
     },
   },
