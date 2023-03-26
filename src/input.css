@@ -9,3 +9,9 @@ body{
     background-color: #222222;
     font-family: 'B612 Mono', monospace;
 }
+
+.text-toxicpurple{
+    --tw-text-opacity: 1;
+    color: rgb(147 51 234 / var(--tw-text-opacity));
+    text-shadow: rgba(154, 70, 229, 0.8) 1px 0 10px;
+}
