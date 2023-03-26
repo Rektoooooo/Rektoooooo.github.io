@@ -4,6 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=B612+Mono&display=swap');
 
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
+
 
 body{
     background-color: #222222;
@@ -21,4 +26,13 @@ body{
 
 .main{
     font-family: 'B612 Mono', monospace;
+}
+
+.socials a:hover{
+    transform: scale(1.2);
+    transition-duration: 200ms;
+}
+
+.socials a{
+    transition-duration: 200ms;
 }

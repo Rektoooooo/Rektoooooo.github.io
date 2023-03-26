@@ -517,8 +517,28 @@ video {
   position: fixed;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.m-6 {
+  margin: 1.5rem;
+}
+
 .m-auto {
   margin: auto;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -530,12 +550,25 @@ video {
   height: fit-content;
 }
 
+.w-1\/3 {
+  width: 33.333333%;
+}
+
 .w-3\/4 {
   width: 75%;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .w-screen {
   width: 100vw;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-row {
@@ -562,6 +595,47 @@ video {
   justify-content: space-between;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-discord {
+  --tw-border-opacity: 1;
+  border-color: rgb(114 137 218 / var(--tw-border-opacity));
+}
+
+.border-steam {
+  --tw-border-opacity: 1;
+  border-color: rgb(74 109 154 / var(--tw-border-opacity));
+}
+
+.border-twitch {
+  --tw-border-opacity: 1;
+  border-color: rgb(100 65 164 / var(--tw-border-opacity));
+}
+
+.border-twitter {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 172 238 / var(--tw-border-opacity));
+}
+
 .bg-navbar {
   --tw-bg-opacity: 1;
   background-color: rgb(17 17 17 / var(--tw-bg-opacity));
@@ -569,6 +643,23 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .pt-12 {
@@ -579,9 +670,19 @@ video {
   text-align: center;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-toxicpurple {
@@ -592,6 +693,11 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
 }
 
 body{
@@ -610,4 +716,18 @@ body{
 
 .main{
   font-family: 'B612 Mono', monospace;
+}
+
+.socials a:hover{
+  transform: scale(1.2);
+  transition-duration: 200ms;
+}
+
+.socials a{
+  transition-duration: 200ms;
+}
+
+.hover\:border-b-purple-600:hover {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(147 51 234 / var(--tw-border-opacity));
 }

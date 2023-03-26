@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="output.css">
     <link href="https://fonts.googleapis.com/css2?family=B612+Mono&display=swap" rel="stylesheet">
     <link rel="icon" href="howllogo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="script.js"></script>
 </head>
 <body class="main">
 
-<header class="bg-navbar w-screen fixed p-2">
-    <div class="w-3/4 flex flex-row justify-between items-center m-auto">
+<header class="bg-navbar w-screen fixed p-2 flex flex-row justify-between">
         <div>
-            <a href="https://rektoo.dev" class="text-toxicpurple text-xl text-center">rektoo.dev</a>
+            <a href="https://rektoo.dev" class="text-toxicpurple text-xl text-center px-6">rektoo.dev</a>
         </div>
 
-        <div>
-            <a href="buffcal" class="text-toxicpurple">buffcal</a>
+        <div class="flex justify-between">
+            <a onclick="scrollToSection('projects')" class="text-toxicpurple px-6 cursor-pointer">Projects</a>
+            <a onclick="scrollToSection('socials')" class="text-toxicpurple px-6 cursor-pointer">Socials</a>
+
         </div>
     </div>
 </header>
@@ -25,14 +28,83 @@
 <br>
 <br>
 
-<div class="w-screen h-fit flex flex-row flex-wrap justify-center">
+<div class="w-screen h-fit flex flex-col flex-wrap justify-center m-auto">
+    <div class="text-toxicpurple text-3xl m-6 text-center">
+    <h1 id="projects">Projects</h1>
+    </div>
 
-    <div class="flex flex-col justify-center">
-        <h2 class="text-white">Buff Calculator</h2>
-        <p>Buff price convertor and calculator for saving prices and multiple items purchases</p>
+    <div class="flex justify-center">
+
+
+    <div class="flex flex-col justify-center text-center text-white w-1/3">
+        <a href="buffcal" class="text-xl hover:border-b-purple-600 border-b-2 w-fit m-auto">Buff Calculator</a>
+        <p class="text-xs">Buff price convertor and calculator for saving prices and multiple items purchases</p>
+        <img class="border-black border-2 rounded m-2" src="buffcal_screenshot.png">
+    </div>
+
+
+
+    </div>
+
+
+    <div class="text-toxicpurple text-3xl m-6 text-center">
+        <h1 id="socials">Socials</h1>
+    </div>
+
+    <div class="flex justify-center flex-wrap socials">
+
+        <a href="https://steamcommunity.com/profiles/76561198350869644" target="_blank" class="flex flex-row border-2 border-steam m-4 p-2 rounded-2xl text-white">
+            <i class="bi bi-steam pl-2"></i>
+            <p class="pl-6 pr-2">Steam</p>
+        </a>
+
+        <a href="https://twitter.com/Rektoooooo" target="_blank" class="flex flex-row border-2 border-twitter m-4 p-2 rounded-2xl text-white">
+            <i class="bi bi-twitter pl-2"></i>
+            <p class="pl-6 pr-2">Twitter</p>
+        </a>
+
+        <a href="https://discordapp.com/users/534672850599280670" target="_blank" class="flex flex-row border-2 border-discord m-4 p-2 rounded-2xl text-white">
+            <i class="bi bi-discord pl-2"></i>
+            <p class="pl-6 pr-2">Discord</p>
+        </a>
+
+        <a href="https://www.twitch.tv/rektoooooo" target="_blank" class="flex flex-row border-2 border-twitch m-4 p-2 rounded-2xl text-white">
+            <i class="bi bi-twitch pl-2"></i>
+            <p class="pl-6 pr-2">Twitch</p>
+        </a>
+
     </div>
 
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
