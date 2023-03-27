@@ -8,6 +8,8 @@ var after = 0;
 var currBefore = "RMB";
 var currAfter = "EUR";
 var storNum = 1;
+var currOneSum = 0;
+var currTwoSum = 0;
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -151,6 +153,14 @@ function addItem(item) {
     });
     saveModule.appendChild(delButton);
 
+    currOneSum += parseFloat(before);
+    currTwoSum += parseFloat(after);
+
+    var summOneElement = document.getElementById('summOne')
+    summOneElement.innerHTML = (currOneSum).toFixed(2) + " " + currBefore;
+    var summTwoElement = document.getElementById('summTwo')
+    summTwoElement.innerHTML = (currTwoSum).toFixed(2) + " " + currAfter;
+
     if (!item) {
         var newItem = {
             id: storNum,
@@ -165,14 +175,26 @@ function addItem(item) {
 
     storNum++;
     console.log("ITEM SUCCESSFULLY ADDED")
+    console.log(before)
+    console.log(after)
+    console.log(currOneSum)
+    console.log(currTwoSum)
 }
 
 function deleteItem(elem) {
+    var summOneElement = document.getElementById('summOne')
+    var summTwoElement = document.getElementById('summTwo')
     var storId = elem.id.replace("buttonId", "");
     console.log(`Deleting element with ID: deleteId${storId}`);
     var elem = document.querySelector(`#deleteId${storId}`);
     elem.parentNode.removeChild(elem);
     localStorage.removeItem(`item${storId}`);
+    console.log("item storID : " + `item${storId}`)
+    storNum--;
+    currOneSum -= parseFloat(before)
+    currTwoSum -= parseFloat(after)
+    summOneElement.innerHTML = (currOneSum).toFixed(2) + " " + currBefore;
+    summTwoElement.innerHTML = (currTwoSum).toFixed(2) + " " + currAfter;
     console.log("item deleted");
 }
 
