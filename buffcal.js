@@ -185,16 +185,19 @@ function addItem(item) {
 }
 
 function deleteItem(elem) {
-    var summOneElement = document.getElementById('summOne');
-    var summTwoElement = document.getElementById('summTwo');
     var storId = elem.id.replace("buttonId", "");
     console.log(`Deleting element with ID: deleteId${storId}`);
-    var elem = document.querySelector(`#deleteId${storId}`);
-    elem.parentNode.removeChild(elem);
+
+    var deleteElem = document.querySelector(`#deleteId${storId}`);
+
+    deleteElem.parentNode.removeChild(deleteElem);
+
     localStorage.removeItem(`item${storId}`);
     console.log("item storID : " + `item${storId}`);
-    currOneSum -= parseFloat(before);
-    currTwoSum -= parseFloat(after);
+    currOneSum -= parseFloat(deleteElem.querySelector('.priceBefore').innerText);
+    currTwoSum -= parseFloat(deleteElem.querySelector('.priceAfter').innerText);
+    var summOneElement = document.getElementById('summOne');
+    var summTwoElement = document.getElementById('summTwo');
     summOneElement.innerHTML = (currOneSum).toFixed(2) + " " + currBefore;
     summTwoElement.innerHTML = (currTwoSum).toFixed(2) + " " + currAfter;
     console.log("item deleted");
@@ -205,18 +208,24 @@ function deleteItem(elem) {
     if (numberOfChildren == 0){
         document.getElementById("totalDiv").classList.add("hidden");
         document.getElementById("totalDiv").classList.remove("flex");
+        storNum = 1;
     }
 }
 
 
+
 function loadItems() {
+    let maxId = 0;
     for (var i = 1; i <= localStorage.length; i++) {
         var item = localStorage.getItem(`item${i}`);
         if (item) {
             item = JSON.parse(item);
             addItem(item);
+            maxId = Math.max(maxId, item.id);
         }
     }
+    storNum = maxId + 1;
 }
+
 
 document.addEventListener("DOMContentLoaded", loadItems);
