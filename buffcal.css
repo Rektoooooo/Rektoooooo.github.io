@@ -109,6 +109,10 @@ input::placeholder{
     font-size: 25px;
 }
 
+#inputSkinName::placeholder{
+    font-size: 15px;
+}
+
 .saveDiv{
     margin: auto;
     display: flex;
