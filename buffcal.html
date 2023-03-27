@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>rektoo.dev - buff calculator</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="buffcal.css">
     <link rel="stylesheet" href="input.css">
     <link rel="stylesheet" href="output.css">
@@ -12,15 +15,16 @@
 </head>
 <body>
 
-<header class="bg-navbar w-screen fixed p-2 main">
-    <div class="w-3/4 flex flex-row justify-between items-center m-auto">
-        <div>
-            <a href="https://rektoo.dev" class="text-toxicpurple text-xl text-center">rektoo.dev</a>
-        </div>
+<header class="bg-navbar w-screen fixed p-2 flex flex-row justify-between main">
+    <div>
+        <a href="https://rektoo.dev" class="text-toxicpurple text-xl text-center px-6">rektoo.dev</a>
+    </div>
 
-        <div>
-            <a href="buffcal" class="text-toxicpurple">buffcal</a>
-        </div>
+    <div class="flex justify-between">
+        <a href="https://rektoo.dev" onclick="scrollToSection('projects')" class="text-toxicpurple px-6 cursor-pointer">Projects</a>
+        <a href="https://rektoo.dev" onclick="scrollToSection('socials')" class="text-toxicpurple px-6 cursor-pointer">Socials</a>
+
+    </div>
     </div>
 </header>
 
@@ -67,7 +71,7 @@
 
 <div class="saveDiv">
     <input id="inputSkinName" type="text" placeholder="Name item for saveing it">
-    <button onclick="addItem()" class="bi bi-upload"></button>
+    <button onclick="addItem()" class="bi bi-upload text-xs p-2"></button>
 </div>
 
 <div id="saveItemDiv" class="saveItemDiv">
