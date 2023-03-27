@@ -67,6 +67,9 @@ function changePercentage() {
 }
 
 function addItem(item) {
+    document.getElementById("totalDiv").classList.remove("hidden");
+    document.getElementById("totalDiv").classList.add("flex");
+
     var getMainDiv = document.getElementById("saveItemDiv");
 
     var saveStorage = document.createElement('div');
@@ -182,21 +185,29 @@ function addItem(item) {
 }
 
 function deleteItem(elem) {
-    var summOneElement = document.getElementById('summOne')
-    var summTwoElement = document.getElementById('summTwo')
+    var summOneElement = document.getElementById('summOne');
+    var summTwoElement = document.getElementById('summTwo');
     var storId = elem.id.replace("buttonId", "");
     console.log(`Deleting element with ID: deleteId${storId}`);
     var elem = document.querySelector(`#deleteId${storId}`);
     elem.parentNode.removeChild(elem);
     localStorage.removeItem(`item${storId}`);
-    console.log("item storID : " + `item${storId}`)
-    storNum--;
-    currOneSum -= parseFloat(before)
-    currTwoSum -= parseFloat(after)
+    console.log("item storID : " + `item${storId}`);
+    currOneSum -= parseFloat(before);
+    currTwoSum -= parseFloat(after);
     summOneElement.innerHTML = (currOneSum).toFixed(2) + " " + currBefore;
     summTwoElement.innerHTML = (currTwoSum).toFixed(2) + " " + currAfter;
     console.log("item deleted");
+
+    const parentElement = document.getElementById("saveItemDiv");
+    const numberOfChildren = parentElement.childElementCount;
+
+    if (numberOfChildren == 0){
+        document.getElementById("totalDiv").classList.add("hidden");
+        document.getElementById("totalDiv").classList.remove("flex");
+    }
 }
+
 
 function loadItems() {
     for (var i = 1; i <= localStorage.length; i++) {
