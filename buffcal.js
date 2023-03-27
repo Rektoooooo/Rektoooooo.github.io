@@ -1,23 +1,12 @@
-
-
 var Percentage = 1;
-
 var base = "CNY";
-
 var target = "EUR";
-
 var Rate;
-
 var name = "";
-
 var before = 0;
-
 var after = 0;
-
 var currBefore = "RMB";
-
 var currAfter = "EUR";
-
 var storNum = 1;
 
 function sleep(ms) {
@@ -45,13 +34,13 @@ async function setRate() {
         });
 
 }
-function getRate(){
+function getRate() {
     return Rate
 }
 
 console.log(Rate)
 
-function saveNumber(){
+function saveNumber() {
     var numberInput = document.getElementById("amount")
     var number = parseFloat(numberInput.value);
 
@@ -62,7 +51,7 @@ function saveNumber(){
     console.log(result.value)
 }
 
-function changeCurrency(){
+function changeCurrency() {
     var selectElementSecondary = document.getElementById("secondary");
     target = (selectElementSecondary.value);
 
@@ -70,15 +59,12 @@ function changeCurrency(){
     base = (selectElementPrimary.value);
 }
 
-function changePercentage(){
+function changePercentage() {
     var selectElement = document.getElementById("PercentageValue");
     Percentage = parseFloat(selectElement.value);
 }
 
-
-
-function addItem(){
-
+function addItem(item) {
     var getMainDiv = document.getElementById("saveItemDiv");
 
     var saveStorage = document.createElement('div');
@@ -95,19 +81,38 @@ function addItem(){
     saveModule.classList.add("saveModule")
     saveStorage.appendChild(saveModule)
 
-
     captions.innerHTML = "<p style=\"margin: 5px 10px\">#</p><p>Name</p>"
 
-    var getCurrBefore = document.getElementById("primary");
-    currBefore = (getCurrBefore.value);
+    if (item) {
+        storNum = item.id;
+        currBefore = item.currBefore;
+        currAfter = item.currAfter;
+        name = item.name;
+        before = item.before;
+        after = item.after;
+    } else {
+        var getCurrBefore = document.getElementById("primary");
+        currBefore = (getCurrBefore.value);
+
+        var getCurrAfter = document.getElementById("secondary");
+        currAfter = (getCurrAfter.value)
+
+        var getName = document.getElementById("inputSkinName");
+        name = (getName.value)
+
+        var getBefore = document.getElementById("amount");
+        before = (getBefore.value)
+
+        var getAfter = document.getElementById("result");
+        after = (getAfter.value)
+    }
+
     let curBefore = document.createElement("p");
     curBefore.id = `curBefore${storNum}`;
     curBefore.classList.add("curBefore")
     curBefore.innerText = currBefore;
     captions.appendChild(curBefore)
 
-    var getCurrAfter = document.getElementById("secondary");
-    currAfter = (getCurrAfter.value)
     let curAfter = document.createElement("p");
     curAfter.id = `curAfter${storNum}`;
     curAfter.classList.add("curAfter")
@@ -120,24 +125,18 @@ function addItem(){
     getlistNum.classList.add("listNum")
     saveModule.appendChild(getlistNum)
 
-    var getName = document.getElementById("inputSkinName");
-    name = (getName.value)
     let skimName = document.createElement("p")
     skimName.id = `skinName${storNum}`
     skimName.classList.add("skinName")
     skimName.innerText = name;
     saveModule.appendChild(skimName)
 
-    var getBefore = document.getElementById("amount");
-    before = (getBefore.value)
     let priceBefore = document.createElement("p")
     priceBefore.id = `priceBefore${storNum}`
     priceBefore.classList.add("priceBefore")
     priceBefore.innerText = before;
     saveModule.appendChild(priceBefore)
 
-    var getAfter = document.getElementById("result");
-    after = (getAfter.value)
     let priceAfter = document.createElement("p")
     priceAfter.id = `priceAfter${storNum}`
     priceAfter.classList.add("priceAfter")
@@ -152,21 +151,23 @@ function addItem(){
     });
     saveModule.appendChild(delButton);
 
-    var item = {
-        id: storNum,
-        currBefore: currBefore,
-        currAfter: currAfter,
-        name: name,
-        before: before,
-        after: after
-    };
-    localStorage.setItem(`item${storNum}`, JSON.stringify(item));
+    if (!item) {
+        var newItem = {
+            id: storNum,
+            currBefore: currBefore,
+            currAfter: currAfter,
+            name: name,
+            before: before,
+            after: after
+        };
+        localStorage.setItem(`item${storNum}`, JSON.stringify(newItem));
+    }
 
     storNum++;
     console.log("ITEM SUCCESSFULLY ADDED")
 }
 
-function deleteItem(elem){
+function deleteItem(elem) {
     var storId = elem.id.replace("buttonId", "");
     console.log(`Deleting element with ID: deleteId${storId}`);
     var elem = document.querySelector(`#deleteId${storId}`);
@@ -175,7 +176,14 @@ function deleteItem(elem){
     console.log("item deleted");
 }
 
-for (var i = 1; i <= localStorage.length; i++) {
-    var item = JSON
+function loadItems() {
+    for (var i = 1; i <= localStorage.length; i++) {
+        var item = localStorage.getItem(`item${i}`);
+        if (item) {
+            item = JSON.parse(item);
+            addItem(item);
+        }
+    }
 }
 
+document.addEventListener("DOMContentLoaded", loadItems);

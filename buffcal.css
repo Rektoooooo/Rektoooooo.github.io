@@ -181,7 +181,8 @@ input::placeholder{
     border: none;
     font-size: 15px;
     margin-top: 5px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
+    padding-right: 5px;
 }
 
 .listNum{

@@ -4,3 +4,4 @@ function scrollToSection(sectionId) {
         section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }
 }
+
