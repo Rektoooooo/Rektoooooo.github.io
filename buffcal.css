@@ -106,7 +106,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 input::placeholder{
     font-weight: lighter;
-    font-size: 20px;
 }
 
 .saveDiv{
