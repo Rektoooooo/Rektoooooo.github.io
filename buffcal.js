@@ -177,11 +177,8 @@ function addItem(item) {
     }
 
     storNum++;
+    document.getElementById("inputSkinName").value = "";
     console.log("ITEM SUCCESSFULLY ADDED")
-    console.log(before)
-    console.log(after)
-    console.log(currOneSum)
-    console.log(currTwoSum)
 }
 
 function deleteItem(elem) {
