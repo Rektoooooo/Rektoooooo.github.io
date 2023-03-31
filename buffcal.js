@@ -56,9 +56,13 @@ function saveNumber() {
 function changeCurrency() {
     var selectElementSecondary = document.getElementById("secondary");
     target = (selectElementSecondary.value);
+    console.log(currAfter)
+    console.log(target)
 
     var selectElementPrimary = document.getElementById("primary");
     base = (selectElementPrimary.value);
+    console.log(currBefore)
+    console.log(base)
 }
 
 function changePercentage() {
@@ -178,7 +182,10 @@ function addItem(item) {
 
     storNum++;
     document.getElementById("inputSkinName").value = "";
+    document.getElementById('primary').disabled = true;
+    document.getElementById('secondary').disabled = true;
     console.log("ITEM SUCCESSFULLY ADDED")
+
 }
 
 function deleteItem(elem) {
@@ -201,15 +208,16 @@ function deleteItem(elem) {
 
     const parentElement = document.getElementById("saveItemDiv");
     const numberOfChildren = parentElement.childElementCount;
+    storNum--;
 
     if (numberOfChildren == 0){
         document.getElementById("totalDiv").classList.add("hidden");
         document.getElementById("totalDiv").classList.remove("flex");
         storNum = 1;
+        document.getElementById('primary').disabled = false;
+        document.getElementById('secondary').disabled = false;
     }
 }
-
-
 
 function loadItems() {
     let maxId = 0;
