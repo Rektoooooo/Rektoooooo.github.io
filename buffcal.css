@@ -238,3 +238,7 @@ input::placeholder{
     display: flex;
     flex-direction: column;
 }
+
+.txt-gray{
+    color: #858585;
+}

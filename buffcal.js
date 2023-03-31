@@ -163,6 +163,13 @@ function addItem(item) {
     currOneSum += parseFloat(before);
     currTwoSum += parseFloat(after);
 
+    const parentElement = document.getElementById("saveItemDiv");
+    const numberOfChildren = parentElement.childElementCount;
+
+    if (numberOfChildren > 0) {
+        document.getElementById("reminder").classList.remove("hidden");
+    }
+
     var summOneElement = document.getElementById('summOne')
     summOneElement.innerHTML = (currOneSum).toFixed(2) + " " + currBefore;
     var summTwoElement = document.getElementById('summTwo')
@@ -212,6 +219,7 @@ function deleteItem(elem) {
 
     if (numberOfChildren == 0){
         document.getElementById("totalDiv").classList.add("hidden");
+        document.getElementById("reminder").classList.add("hidden");
         document.getElementById("totalDiv").classList.remove("flex");
         storNum = 1;
         document.getElementById('primary').disabled = false;
