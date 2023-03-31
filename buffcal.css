@@ -252,3 +252,15 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+#loader {
+    animation: spin 1s linear infinite;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

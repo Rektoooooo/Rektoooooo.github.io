@@ -16,6 +16,8 @@ function sleep(ms) {
 }
 
 async function setRate() {
+    var loader = document.getElementById('loader');
+    loader.style.display = 'block';
     await sleep(500);
     var selectElement = document.getElementById("secondary");
     target = (selectElement.value);
@@ -34,7 +36,8 @@ async function setRate() {
         .catch(error => {
             console.error('Error:', error);
         });
-
+    await sleep(200);
+    loader.style.display = 'none';
 }
 function getRate() {
     return Rate
@@ -242,3 +245,9 @@ function loadItems() {
 
 
 document.addEventListener("DOMContentLoaded", loadItems);
+
+
+window.addEventListener('load', function() {
+    var loader = document.getElementById('loader');
+    loader.style.display = 'none';
+});

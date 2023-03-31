@@ -42,7 +42,10 @@
 </div>
     <div class="mid">
     <h1>=</h1>
-        <button onclick="setRate();">Convert</button>
+        <button class="flex flex-row relative" onclick="setRate();">
+            <p class="mr-4">Convert</p>
+            <img id="loader" alt="loadicon" src="loadicon.png">
+        </button>
     </div>
     <div class="box">
     <select id="secondary" onchange="changeCurrency(); setRate();" class="input">
