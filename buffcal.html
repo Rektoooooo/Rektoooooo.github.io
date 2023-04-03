@@ -30,8 +30,11 @@
 
 <h1 class="title pt-12">CURRENCY CONVERTOR FOR BUFF PRICES</h1>
 <div class="main">
+    <div class="w-1/2 h-fit text-center">
+        <p class="top-32 left-10 txt-gray hidden" id="reminder">You can't change currency while saving other items</p>
+    </div>
+    <div class="flex flex-row justify-center">
 <div class="box">
-    <p class="absolute top-32 left-10 txt-gray hidden" id="reminder">You can't change currency while saving other items</p>
     <select id="primary" onchange="changeCurrency(); setRate();" class="input">
         <option value="CNY">RMB</option>
         <option value="USD">USD</option>
@@ -43,7 +46,7 @@
     <div class="mid">
     <h1>=</h1>
         <button class="flex flex-row relative" onclick="setRate();">
-            <p class="mr-4">Convert</p>
+            <p>Convert</p>
             <img id="loader" alt="loadicon" src="loadicon.png">
         </button>
     </div>
@@ -70,11 +73,12 @@
                 <option value="0.90">90%</option>
             </select>
         </div>
-</div>
+    </div>
+    </div>
 </div>
 
 <div class="saveDiv">
-    <input id="inputSkinName" type="text" placeholder="Name item for saving it">
+    <input on id="inputSkinName" type="text" placeholder="Name item for saving it">
     <button onclick="addItem()" class="bi bi-upload text-sm p-2"></button>
 </div>
 
